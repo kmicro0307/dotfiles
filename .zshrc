@@ -100,3 +100,14 @@ zplug load
 
 source /home/$USER/.config/broot/launcher/bash/br
 # PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)${reset_color} "
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# Windows Terminalで使用，文活の際に同じパスを持つペインを作成する
+function _windows_terminal_osc_9_9 {
+    # Inform Terminal about shell current working directory
+    # see: https://github.com/microsoft/terminal/issues/8166
+    printf '\e]9;9;%s\e\' "$(wslpath -w "$(pwd)")"
+}
+precmd_functions+=(_windows_terminal_osc_9_9)
