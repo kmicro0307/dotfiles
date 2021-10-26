@@ -1,3 +1,4 @@
+source ~/zsh-snap/znap.zsh
 hiscopy() {
     echo `history | fzf --tac | awk '{$1="";print $0;}'` | cmd.exe
 }
@@ -111,3 +112,5 @@ function _windows_terminal_osc_9_9 {
     printf '\e]9;9;%s\e\' "$(wslpath -w "$(pwd)")"
 }
 precmd_functions+=(_windows_terminal_osc_9_9)
+
+znap source marlonrichert/zsh-autocomplete
