@@ -13,10 +13,8 @@ alias tmuxg="tmux attach -d || tmux new-session \; source-file ~/.tmux/session_c
 #sshの設定
 #https://docs.google.com/spreadsheets/d/1DzNuz4jAywoI3mXEnUdy9O8pikGlPSH0WU75oTgF-es/edit#gid=0
 
-alias project_obsidian="cd /mnt/f/note/obsidian"
-alias project_twtter="/mnt/f/pycharm/temp_weather"
 # alias open="/mnt/c/Windows/explorer.exe"
-alias open='"/mnt/c/Program Files/te210322/TE64.exe"'
+# alias open='"/mnt/c/Program Files/te210322/TE64.exe"'
 
 alias pip="pip3"
 alias python="python3"
@@ -105,7 +103,7 @@ source /home/$USER/.config/broot/launcher/bash/br
 # zoxide
 eval "$(zoxide init zsh)"
 
-# Windows Terminalで使用，文活の際に同じパスを持つペインを作成する
+# Windows Terminalで使用，分割の際に同じパスを持つペインを作成する
 function _windows_terminal_osc_9_9 {
     # Inform Terminal about shell current working directory
     # see: https://github.com/microsoft/terminal/issues/8166
