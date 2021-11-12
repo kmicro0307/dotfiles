@@ -40,6 +40,12 @@ bindkey "^[[1;5C" forward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 bindkey "^[[1;5D" backward-word
+# HOMEキー
+# bindkey "^[[1~" beginning-of-line
+bindkey "^[[H" beginning-of-line
+# ENDキー
+# bindkey "^[[4~" end-of-line
+bindkey "^[[F" end-of-line
 
 # コマンド履歴検索
 autoload history-search-end
