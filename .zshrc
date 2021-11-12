@@ -35,9 +35,11 @@ alias gc='git commit'
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
 
-# キーバインドの設定 
+# 単語移動のキーバインド設定 
+bindkey "^[[1;5C" forward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
+bindkey "^[[1;5D" backward-word
 
 # コマンド履歴検索
 autoload history-search-end
