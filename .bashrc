@@ -8,7 +8,11 @@ hisdo() {
 }
 
 export PATH="$PATH:/mnt/c/Program Files/AutoHotkey"
-export DISPLAY=192.168.0.32:0.0
+
+# WSL2 クリップボード連携用にDISPLAYを設定
+LOCAL_IP=$(cat /etc/resolv.conf | grep nameserver | cut -d' ' -f2)
+export DISPLAY=$LOCAL_IP:0.0
+
 export PATH="$PATH:/home/$USER/.cargo/bin"
 alias tmuxg="tmux attach -d || tmux new-session \; source-file ~/.tmux/session_conf"
 
@@ -45,3 +49,5 @@ source /home/$USER/.config/broot/launcher/bash/br
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+
+source /home/yoshi/.config/broot/launcher/bash/br
