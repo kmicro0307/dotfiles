@@ -1,0 +1,3 @@
+
+/* すごいHaskell本にプロンプトをあわせる */
+:set prompt "ghci>"  
