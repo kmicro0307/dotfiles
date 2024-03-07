@@ -1,4 +1,3 @@
-source ~/zsh-snap/znap.zsh
 hiscopy() {
     echo `history | fzf --tac | awk '{$1="";print $0;}'` | cmd.exe
 }
@@ -61,7 +60,7 @@ setopt no_flow_control
 # prompt
 PROMPT='%m:%c %n$ '
 
-. $HOME/plugins/z/z.sh
+# . $HOME/plugins/z/z.sh
 #if [ $SHLVL = 1 ]; then
 #    tmux
 # 履歴ファイルの保存先
@@ -71,6 +70,10 @@ PROMPT='%m:%c %n$ '
 # zplugの設定
 ## zplug
 source ~/.zplug/init.zsh
+
+# zの設定
+zplug "agkozak/zsh-z"
+
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # 非同期処理できるようになる
 zplug "mafredri/zsh-async"
@@ -105,18 +108,14 @@ SAVEHIST=10000
 # Then, source plugins and add commands to $PATH
 zplug load
 
-source /home/$USER/.config/broot/launcher/bash/br
 # PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)${reset_color} "
 
 # zoxide
 eval "$(zoxide init zsh)"
 
-# Windows Terminalで使用，分割の際に同じパスを持つペインを作成する
-function _windows_terminal_osc_9_9 {
-    # Inform Terminal about shell current working directory
-    # see: https://github.com/microsoft/terminal/issues/8166
-    printf '\e]9;9;%s\e\' "$(wslpath -w "$(pwd)")"
-}
-precmd_functions+=(_windows_terminal_osc_9_9)
-
+# Download Znap, if it's not there yet.
+[[ -r ~/Repos/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
+source ~/Repos/znap/znap.zsh  # Start Znap
 znap source marlonrichert/zsh-autocomplete
