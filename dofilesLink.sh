@@ -10,3 +10,5 @@ ln -sf ~/dotfiles/.wgetrc ~/.wgetrc
 ln -sf ~/dotfiles/Brewfile ~/Brewfile
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.zprofile ~/.zprofile
+ln -sf ~/dotfiles/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua 
+ln -sf ~/dotfiles/.config/wezterm/keybinds.lua ~/.config/wezterm/keybinds.lua 
