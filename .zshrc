@@ -14,13 +14,20 @@ alias tmuxg="tmux attach -d || tmux new-session \; source-file ~/.tmux/session_c
 
 # alias open="/mnt/c/Windows/explorer.exe"
 # alias open='"/mnt/c/Program Files/te210322/TE64.exe"'
+if grep -q Microsoft /proc/version; then
+  alias pip="pip3"
+  alias python="python3"
+  alias arp='/mnt/c/Windows/System32/arp.exe'
+  alias cmd='/mnt/c/Windows/System32/cmd.exe'
+  alias clip='clip.exe'
+  alias pbcopy='clip.exe'
+fi 
 
-alias pip="pip3"
-alias python="python3"
-alias arp='/mnt/c/Windows/System32/arp.exe'
-alias cmd='/mnt/c/Windows/System32/cmd.exe'
-alias clip='clip.exe'
-alias pbcopy='clip.exe'
+if [ "$(uname)" = "Darwin" ]; then
+	export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home
+	export PATH=$JAVA_HOME/bin:$PATH
+fi
+
 # alias g='git'
 alias ga='git add'
 alias gd='git diff'
