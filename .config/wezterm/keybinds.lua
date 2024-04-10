@@ -148,6 +148,8 @@ return {
     { key = 'DownArrow', mods = 'SHIFT|ALT|CTRL', action = act.AdjustPaneSize{ 'Down', 1 } },
     { key = 'Copy', mods = 'NONE', action = act.CopyTo 'Clipboard' },
     { key = 'Paste', mods = 'NONE', action = act.PasteFrom 'Clipboard' },
+    {key = 'LeftArrow', mods = 'OPT',action = act.SendKey {key = 'b',mods = 'ALT',},},
+    { key = 'RightArrow',mods = 'OPT',action = act.SendKey { key = 'f', mods = 'ALT' },},
   },
 
   key_tables = {
